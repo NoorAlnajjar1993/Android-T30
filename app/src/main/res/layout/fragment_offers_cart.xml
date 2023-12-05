@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_12sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_12sdp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOffersCart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+            app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="5"
+            app:spanCount="3"
+            tools:listitem="@layout/row_offers_cart" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+            app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/appImageView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_bg_offers_test" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_14ssp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    app:tvFontType="BOLD"
+                    android:text="شاهد أكثر  \n
+لتحصل على قروش أكثر!"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_coint_cart_test_1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/appImageView8"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_video"
+                    android:padding="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

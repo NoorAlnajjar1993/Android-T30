@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.gamelobbyinterface.GameLobbyViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_splash_bg">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_16sdp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/appImageView9"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:elevation="@dimen/_5sdp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading"
+            app:lottie_repeatCount="20" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+            android:id="@+id/appImageView18"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:src="@drawable/ic_found"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:id="@+id/appTextView36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:lineHeight="@dimen/_20sdp"
+            android:padding="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@{viewModel.titleFound}"
+            android:textSize="@dimen/_15ssp"
+            app:tvFontType="BOLD"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appImageView9"
+            tools:text="جاري البحث عن لاعب،\n
+انتظر قليلا من فضلك..." />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.typeGame == 2 ? View.VISIBLE :  View.GONE , default = visible}"
+            app:layout_constraintBottom_toTopOf="@+id/tv_endGame"
+            app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+            app:layout_constraintStart_toEndOf="@+id/gl_v_start">
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                android:id="@+id/tv_copyLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_dots"
+                android:drawableRight="@drawable/ic_fluent_copy"
+                android:drawableTintMode="src_over"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:padding="@dimen/_6sdp"
+                android:text="نسخ الرابط"
+                android:textColor="@color/button_color"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tvFontType="MEDIUM" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppButton
+                android:id="@+id/btn_share"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="شارك الرابط"
+                android:textSize="@dimen/_15ssp"
+                app:btnFontType="MEDIUM"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_copyLink" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:id="@+id/tv_endGame"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_45sdp"
+            android:drawableTintMode="src_over"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_35sdp"
+            android:text="خروج من اللعبة"
+            android:textColor="@color/red_"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tvFontType="MEDIUM" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

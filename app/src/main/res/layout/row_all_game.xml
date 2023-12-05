@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.dominate.thirtySecondsChallenge.data.model.menu.CategoryGetMainResponseModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp">
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/card_color"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:rippleColor="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/appImageView5"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    ivImageUrl="@{item.imageUrl}"
+                    tools:src="@drawable/ic_menu"
+                    android:scaleType="centerInside"
+                    android:layout_margin="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.title}"
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintBottom_toBottomOf="@+id/appImageView5"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_favorite"
+                    app:layout_constraintStart_toEndOf="@+id/appImageView5"
+                    app:layout_constraintTop_toTopOf="@+id/appImageView5"
+                    tools:text="رياضة" />
+
+<!--                android:src="@{item.fav? @drawable/ic_like : @drawable/ic_un_like , default = @drawable/ic_un_like}"-->
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/iv_favorite"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:visibility="gone"
+                    android:layout_margin="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

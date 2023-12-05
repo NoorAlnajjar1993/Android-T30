@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.shoppingcart.ShoppingCartViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_12sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_12sdp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+            app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                android:id="@+id/iv_posters"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/ic_posters" />
+
+            <View
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_1sdp" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                android:id="@+id/iv_background"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:src="@drawable/ic_background" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+            app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الملصقات"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_14sdp"
+                android:visibility="@{viewModel.isPoster() ? View.VISIBLE : View.GONE,default = visible}"
+                app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout9"
+                app:tvFontType="BOLD" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                android:id="@+id/iv_MoreDetailsPoster"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:src="@drawable/ic_more_details"
+                android:visibility="@{viewModel.isPoster() ? View.VISIBLE : View.GONE,default = visible}" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="خلفيات الملف الشخصي"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_14sdp"
+                android:visibility="@{viewModel.isPoster() ? View.GONE : View.VISIBLE,default = gone}"
+                app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout9"
+                app:tvFontType="BOLD" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                android:id="@+id/iv_MoreDetailsBackground"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:src="@drawable/ic_more_details"
+                android:visibility="@{viewModel.isPoster() ? View.GONE : View.VISIBLE,default = gone}" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPosters"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+            app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout10"
+            app:spanCount="3"
+            tools:itemCount="5"
+            tools:listitem="@layout/row_posters" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

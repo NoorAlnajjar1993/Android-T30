@@ -1,0 +1,73 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">30 Seconds Challenge</string>
+
+    <string name="alert_dialog_title">30 Seconds Challenge</string>
+    <string name="facebook_app_id">266093285834819</string>
+    <string name="facebook_client_token">e2e48bc4cd332a44cef3fc910bedeea2</string>
+    <string name="web_client_id">AIzaSyDgcEK-4gTQf58SGJ1y5-q0Pf5-o2Yfze0</string>
+
+    <string name="facebook_application_id" translatable="false">YOUR_APP_ID</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fbYOUR_APP_ID</string>
+
+    <!-- General -->
+    <string name="cancel">Cancel</string>
+    <string name="select">Select</string>
+    <string name="loading">Loading …</string>
+    <string name="ok">OK</string>
+    <string name="none">None</string>
+    <string name="edit">Edit</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+
+    <string name="english">English</string>
+    <string name="arabic">العربية</string>
+
+    <string name="empty_string_"> </string>
+    <string name="empty_string" />
+
+    <string name="btn_try_again">please try again</string>
+    <string name="error_no_internet">No Internet connection</string>
+    <string name="error_server">timeout</string>
+    <string name="error_msg">Something went wrong</string>
+    <string name="session_ended">Session Ended</string>
+    <string name="verification">Verification</string>
+    <string name="hint_spinnrt_gender">Select</string>
+
+    <!-- On Boarding-->
+    <string name="title_on_boarding_step_one">Gather your friends and prepare for exciting competitions and challenges!</string>
+    <string name="title_on_boarding_step_two">Start the adventure, and test your abilities and speed in the thirty challenge</string>
+    <string name="title_on_boarding_step_three">Compete with other players and get rewards</string>
+    <string name="choose_your_interests">Choose your interests</string>
+    <string name="start">Start</string>
+    <string name="save">Save</string>
+
+    <!--profile-->
+    <string name="hint_enter_first_name">Enter First Name</string>
+    <string name="hint_enter_last_name">Enter Last Name</string>
+    <string name="hint_enter_email">Enter Email</string>
+    <string name="hint_enter_mobile">Enter Mobile Number</string>
+
+    <!--main-->
+    <string name="default_result_xp">0</string>
+    <string name="default_result_level">0/0</string>
+
+    <string name="public_view">Public</string>
+    <string name="private_view">Private</string>
+
+    <!--friends-->
+    <string name="status_online">Online</string>
+    <string name="status_offline">Offline</string>
+    <string name="level">Level</string>
+
+
+    <string name="msg_confirm_delete_err">msg_confirm_delete_err</string>
+    <string name="discount_ic">% Off</string>
+
+</resources>
+
+<!--// note -->
+<!--    '&' &ndash;&gt; '&amp;'-->
+
+<!--    '<' &ndash;&gt; '&lt;'-->
+
+<!--    '>' &ndash;&gt; '&gt;'-->

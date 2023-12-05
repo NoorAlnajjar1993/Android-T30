@@ -1,0 +1,22 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="false">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <gradient
+                android:type="linear"
+                android:angle="1"
+                android:gradientRadius="20"
+                android:startColor="@color/button_color"
+                android:centerColor="@color/button_color"
+                android:endColor="#1B1B57" />
+            <corners android:radius="8dp" />
+            <padding
+                android:top="8dp"
+                android:bottom="8dp"
+                android:left="8dp"
+                android:right="8dp" />
+            <size
+                android:width="120dp"
+                android:height="40dp" />
+        </shape>
+    </item>
+</selector>

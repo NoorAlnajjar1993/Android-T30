@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme.Splash" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- App Theme -->
+    <style name="AppTheme" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Default colors -->
+        <item name="colorPrimary">@color/main_background</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/main_background</item>
+<!--        <item name="android:statusBarColor">@color/main_background</item>-->
+
+        <item name="android:windowBackground">@color/main_background</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        // To change status bar icon to be dark, set false to change icons to light
+
+        <item name="android:navigationBarColor">@color/black</item>
+        <!-- Set Views Default Style -->
+        <item name="android:textViewStyle">@style/AppTheme.TextViewStyle</item>
+        // TextView
+        <item name="cardViewStyle">@style/AppTheme.CardView</item>
+        // CardView
+        <item name="materialButtonStyle">@style/AppTheme.Button</item>
+        // Button
+        <item name="android:ratingBarStyle">@style/AppTheme.RatingBar</item>
+        // Rating View
+        <item name="tabStyle">@style/AppTheme.TabLayout</item>
+        // TabLayout
+        // EditText
+        <item name="textInputStyle">@style/TextInputLayoutStyle</item>
+        <item name="editTextStyle">@style/TextInputEditTextStyle</item>
+        // Radio Button
+        <item name="radioButtonStyle">@style/AppTheme.RadioButton</item>
+        //Spinner
+        <!-- For the resting Spinner style -->
+        <item name="android:spinnerItemStyle">
+            @style/spinnerItemStyle
+        </item>
+        <!-- For each individual Spinner list item once clicked on -->
+        <item name="android:spinnerDropDownItemStyle">
+            @style/spinnerDropDownItemStyle
+        </item>
+
+        <item name="spinnerDropDownItemStyle">@style/spinnerDropDownItemStyle</item>
+
+        <item name="spinnerStyle">@style/AppTheme.Spinner</item>
+
+        <!-- !Important! Add this to force the use of the Spinner mode -->
+        <item name="android:datePickerStyle">@style/AppTheme.DatePickerStyle</item>
+
+
+        <item name="bottomSheetDialogTheme">@style/AppTheme.BottomSheetDialog</item>
+
+
+        <!-- PopUp Menu -->
+        <item name="popupMenuStyle">@style/MyPopupMenu</item>
+
+        <item name="alertDialogTheme">@style/Theme.MaterialComponents.Light.Dialog.Alert.Bridge</item>
+
+        <item name="android:dropDownListViewStyle">@style/PopupMenuListView</item>
+
+    </style>
+
+    <style name="PopupMenuListView" parent="@style/Widget.AppCompat.ListView.DropDown">
+        <item name="android:divider">@color/lite_gray</item>
+        <item name="android:dividerHeight">1dp</item>
+    </style>
+
+    <!-- PopUp Menu -->
+    <style name="MyPopupMenu" parent="@style/Widget.AppCompat.PopupMenu">
+        <item name="android:dropDownVerticalOffset">5dp</item>
+        <item name="android:dropDownHorizontalOffset">-180dp</item>
+    </style>
+
+    <style name="AppTheme.DatePickerStyle" parent="android:Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+    </style>
+
+    <!-- Spinner Design -->
+    <style name="spinnerItemStyle">
+        <item name="android:gravity">center_vertical</item>
+        <item name="singleLine">false</item>
+        <item name="android:singleLine">false</item>
+        <item name="paddingStart">20dp</item>
+        <item name="android:textColor">@color/text_default_color</item>
+        <item name="fontFamily">@font/ar_regular_font</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+
+    <style name="spinnerDropDownItemStyle">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:textColor">@color/text_dark_color</item>
+        <item name="fontFamily">@font/ar_regular_font</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <style name="AppTheme.Spinner" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/spinner_background</item>
+        <item name="android:spinnerMode">dropdown</item>
+        <item name="spinnerDropDownItemStyle">@style/spinnerDropDownItemStyle</item>
+        <item name="android:spinnerItemStyle">@style/spinnerItemStyle</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+    </style>
+
+    <!-- Default TextView Style -->
+    <style name="AppTheme.TextViewStyle" parent="android:Widget.Material.TextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="tvFontType">REGULAR</item>
+    </style>
+
+    <!-- Default CardView Style -->
+    <style name="AppTheme.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="rippleColor">@color/colorAccent</item>
+    </style>
+
+    <!-- Default Button Style -->
+    <style name="AppTheme.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/custom_button</item>
+        <item name="backgroundTint">@color/button_color</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+        <item name="tvFontType">MEDIUM</item>
+        <item name="btnFontType">MEDIUM</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:elevation">@dimen/_3sdp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="rippleColor">@color/white</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="shapeAppearanceOverlay">@style/Button_Rounded</item>
+    </style>
+
+
+    <style name="Button_Rounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopLeft">50%</item>
+        <item name="cornerSizeTopRight">50%</item>
+        <item name="cornerSizeBottomLeft">50%</item>
+        <item name="cornerSizeBottomRight">50%</item>
+    </style>
+
+    <style name="AppTheme.Button.Clear" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="strokeColor">@color/default_gary</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@color/text_dark_color</item>
+        <item name="android:textSize">14sp</item>
+        <item name="btnFontType">BOLD</item>
+        <item name="rippleColor">@android:color/transparent</item>
+        <item name="android:minHeight">60dp</item>
+    </style>
+
+    <style name="AppTheme.Button.Accept" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="strokeColor">@color/default_gary</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@color/text_dark_color</item>
+        <item name="android:textSize">14sp</item>
+        <item name="btnFontType">BOLD</item>
+        <item name="rippleColor">@android:color/transparent</item>
+        <item name="android:minHeight">@dimen/_40sdp</item>
+    </style>
+
+    <!-- TextInputLayout Style -->
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxStrokeColor">@color/edit_text_outline_color</item>
+        <item name="boxStrokeWidth">0.5dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="materialThemeOverlay">@style/TextInputLayoutEditTextStyle</item>
+        <item name="errorEnabled">false</item>
+        <item name="hintEnabled">false</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="errorTextColor">@color/blue</item>
+        <item name="boxCornerRadiusTopStart">15dp</item>
+        <item name="boxCornerRadiusTopEnd">15dp</item>
+        <item name="boxCornerRadiusBottomStart">15dp</item>
+        <item name="boxCornerRadiusBottomEnd">15dp</item>
+    </style>
+
+    <style name="TextInputLayoutEditTextStyle">
+        <item name="editTextStyle">@style/TextInputEditTextStyle</item>
+    </style>
+
+    <!-- Radio Button -->
+    <style name="AppTheme.RadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/radio_button_selector</item>
+    </style>
+
+    <!-- TextInputEditText Style -->
+    <style name="TextInputEditTextStyle" parent="@style/Base.Widget.MaterialComponents.TextInputEditText">
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/edit_text_text_color</item>
+        <item name="etFontType">MEDIUM</item>
+        <item name="hintTextColor">@color/text_gray_color</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+
+    </style>
+
+    <!-- TextInputEditText Style search -->
+    <style name="SearchStyle" parent="@style/Base.Widget.MaterialComponents.TextInputEditText">
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="etFontType">BOLD</item>
+        <item name="hintTextColor">@color/text_gray_color</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:background">@color/card_color</item>
+
+    </style>
+
+    <!-- TextInputEditText Style search -->
+    <style name="SearchStyle2" parent="Widget.AppCompat.SearchView">
+        <item name="hintTextColor">#FFFFFF</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:background">@drawable/bg_search</item>
+        <item name="android:textColorHint">#FFFFFF</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:bottomLeftRadius">@dimen/_8sdp</item>
+        <item name="android:bottomRightRadius">@dimen/_8sdp</item>
+        <item name="android:topLeftRadius">@dimen/_8sdp</item>
+        <item name="android:topRightRadius">@dimen/_8sdp</item>
+    </style>
+
+    <!-- Dialog Animation Style -->
+    <style name="DialogAnimations">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
+    <!-- Dialog Style -->
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="buttonBarPositiveButtonStyle">@style/DialogPositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/DialogNegativeButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/DialogNeutralButtonStyle</item>
+
+        <item name="android:windowMinWidthMajor">95%</item>
+        <item name="android:windowMinWidthMinor">95%</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+
+
+        <item name="android:windowAnimationStyle">@style/DialogAnimations</item>
+    </style>
+
+    <!-- IHospital Provider Dialog Buttons Style -->
+    <style name="DialogPositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <!-- IHospital Provider Dialog Buttons Style -->
+    <style name="DialogNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="DialogNeutralButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="android:textColor">@color/text_dark_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+
+    <!-- IHospital Provider Default Toolbar Style -->
+    <style name="AppTheme.ToolbarStyle">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:background">@color/toolbar_bg</item>
+        <item name="android:theme">@style/AppTheme.ToolbarTheme</item>
+        <item name="titleTextAppearance">@style/HomeToolbarTitleTextAppearance</item>
+        <item name="navigationIcon">@drawable/ic_back</item>
+        <item name="subtitleTextAppearance">@style/HomeToolbarSubTitleTextAppearance</item>
+    </style>
+
+
+    <!--  Should Add Style To Enable it -->
+    <style name="OtpWidget.OtpView" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@null</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="AppTheme.BasicToolbarStyle">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:background">@color/toolbar_bg</item>
+        <item name="android:theme">@style/AppTheme.ToolbarTheme</item>
+        <item name="titleTextAppearance">@style/HomeToolbarTitleTextAppearance</item>
+        <item name="subtitleTextAppearance">@style/HomeToolbarSubTitleTextAppearance</item>
+    </style>
+
+    <style name="AppTheme.ToolbarTheme">
+        <!-- Color used for the title of the Toolbar - as long as not overridden -->
+        <item name="android:textColorPrimary">@color/title_toolbar_color</item>
+        <!-- Used to color back button and three dots -->
+        <item name="android:textColorSecondary">@color/secondary_toolbar_color</item>
+    </style>
+
+    <style name="HomeToolbarTitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/ar_bold_font</item>
+        <item name="android:textColor">@color/title_toolbar_color</item>
+    </style>
+
+    <style name="HomeToolbarSubTitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textSize">10sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/subtitle_toolbar_color</item>
+    </style>
+
+    <!-- IHospital Provider Default Rating Bar Style -->
+    <style name="AppTheme.RatingBar" parent="android:style/Widget.Material.RatingBar.Small">
+        <item name="android:progressTint">#ffc726</item>
+        <item name="android:progressBackgroundTint">@color/lite_gray</item>
+        <item name="android:numStars">5</item>
+        <item name="enabled">false</item>
+    </style>
+
+    <!-- IHospital Provider TabLayout Default Style-->
+    <style name="AppTheme.TabLayout" parent="@style/Widget.MaterialComponents.TabLayout.Colored">
+        <!-- Tab -->
+        <item name="tabRippleColor">@color/colorAccent</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabBackground">@color/colorPrimary</item>
+        <item name="rippleColor">@color/colorAccent</item>
+        <!-- Indicator -->
+        <item name="tabIndicatorColor">@color/colorAccent</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="tabIndicatorGravity">bottom</item>
+        <item name="tabIndicatorFullWidth">true</item>
+        <!-- Text -->
+        <item name="tabTextColor">@color/tab_not_selected_text_color</item>
+        <item name="tabSelectedTextColor">@color/tab_selected_text_color</item>
+        <item name="itemRippleColor">@color/colorAccent</item>
+        <item name="tabTextAppearance">@style/TabsTextAppearance</item>
+    </style>
+
+    <style name="TabsTextAppearance" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">12sp</item>
+        <item name="backgroundTint">@color/text_default_color</item>
+    </style>
+
+    <style name="AppTheme.IconButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:layout_height">46dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+    </style>
+
+    <style name="AppTheme.BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.CardRadues">
+        <item name="cornerSize">20%</item>
+        <item name="cornerFamily">rounded</item>
+
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerFamilyTopLeft">rounded</item>
+    </style>
+
+
+    <style name="AppTheme.ToolbarStyle.SelectLocation" parent="@style/AppTheme.ToolbarStyle">
+        <item name="titleTextAppearance">@style/SelectLocationToolbarTitleTextAppearance</item>
+    </style>
+
+    <style name="SelectLocationToolbarTitleTextAppearance" parent="@style/HomeToolbarTitleTextAppearance">
+        <item name="android:maxLines">1</item>
+        <item name="autoSizeTextType">uniform</item>
+    </style>
+
+    <style name="regularFontStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/ar_regular_font</item>
+    </style>
+
+    <style name="mediumFontStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/ar_medium_font</item>
+    </style>
+
+    <style name="boldFontStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/ar_bold_font</item>
+    </style>
+
+    <style name="semiBoldFontStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/ar_semibold_font</item>
+    </style>
+
+    <style name="Color1SwitchStyle">
+        <item name="colorControlActivated">@color/blue</item>
+    </style>
+
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">@dimen/_6ssp</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">@dimen/_6ssp</item>
+    </style>
+
+    <!-- EditText -->
+    <style name="AppTheme.EditText" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:elevation">3dp</item>
+        <item name="boxBackgroundColor">@color/card_color</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/fields_margin_top</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_8sdp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_8sdp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_8sdp</item>
+        <item name="boxStrokeColor">@color/blue</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="hintEnabled">false</item>
+        <item name="boxStrokeErrorColor">@color/blue</item>
+        <item name="colorError">@color/blue</item>
+        <item name="errorTextColor">@color/blue</item>
+        <item name="boxStrokeWidthFocused">@dimen/_1sdp</item>
+        <item name="fontFamily">@font/ar_bold_font</item>
+        <item name="subtitleTextAppearance">@style/HomeToolbarSubTitleTextAppearance</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="answer"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70sdp"
+            app:cardBackgroundColor="@color/text_color_"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@{answer}"
+                android:textSize="@dimen/_14ssp"
+                app:tvFontType="BOLD"
+                tools:text="answer" />
+
+        </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.home.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradiant_nav_icon"
+        android:fitsSystemWindows="false">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_85sdp" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+            android:id="@+id/iv_banners"
+            ivImageUrl="@{viewModel.imageBanner}"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250sdp"
+            android:clickable="@{viewModel.isBannersClickable}"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_banner_home" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+            android:id="@+id/appCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            android:backgroundTint="@color/card_color"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_banners">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp">
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="رياضة"
+                    android:textSize="@dimen/_18ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tvFontType="BOLD" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_Sport"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/appTextView4"
+                    app:spanCount="3"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/row_sport" />
+
+                <View
+                    android:id="@+id/shine"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/bg_shine"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/rv_Sport"
+                    app:layout_constraintEnd_toEndOf="@id/rv_Sport"
+                    app:layout_constraintStart_toStartOf="@+id/rv_Sport"
+                    app:layout_constraintTop_toTopOf="@+id/rv_Sport" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_Sport">
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/tv_LeaderBoard"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/strok_blue"
+                        android:drawableRight="@drawable/ic_leaderboards"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/_25sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:text="المتصدرون"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_Sport"
+                        app:tvFontType="BOLD" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/tv_onGoingGame"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/strok_blue"
+                        android:drawableRight="@drawable/ic_person_group"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/_25sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:text="الألعاب الجارية"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rv_Sport"
+                        app:tvFontType="BOLD" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_banner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/_16sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCardView"
+            tools:itemCount="3"
+            tools:listitem="@layout/row_banner" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

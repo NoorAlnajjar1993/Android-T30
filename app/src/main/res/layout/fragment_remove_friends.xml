@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.player.PlayerViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_dialog">
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layoutDirection="rtl"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_close"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_26sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_26sdp" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="هل تريد الغاء طلب الصداقة؟"
+                    android:textColor="@color/text_color_"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_close"
+                    app:tvFontType="BOLD" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/tv_RemoveRequestFriends"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:background="@drawable/strok_red"
+                    android:drawableTintMode="src_over"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:includeFontPadding="false"
+                    android:text="الغاء طلب الصداقة"
+                    android:textColor="@color/red_"
+                    android:textSize="@dimen/_18ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/appTextView7"
+                    app:tvFontType="MEDIUM" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

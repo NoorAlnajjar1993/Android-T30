@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.dominate.thirtySecondsChallenge.R" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.dominate.thirtySecondsChallenge.data.model.friends.UserFriendsResponseModel" />
+    </data>
+
+    <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+        style="@style/CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:backgroundTint="@color/card_color"
+        android:elevation="@dimen/_3sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardElevation="@dimen/_3sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_8sdp">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/appImageView5"
+                ivImageUrl="@{item.profileImageUrl}"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:src="@drawable/ic_test_person_3"
+                app:civ_border="true"
+                app:civ_border_color="#6E45E2"
+                app:civ_border_width="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/appImageView5"
+                app:layout_constraintEnd_toStartOf="@+id/appImageView5"
+                app:layout_constraintStart_toEndOf="@+id/appCompatCheckBox"
+                app:layout_constraintTop_toTopOf="@+id/appImageView5">
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.firstName + ' ' + item.lastName}"
+                    android:textColor="@color/white"
+                    android:textAlignment="viewEnd"
+                    android:textSize="@dimen/_13ssp"
+                    app:tvFontType="BOLD"
+                    tools:text="Hassan Hasanat" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.valueOf(@string/level) + ' ' + String.valueOf(item.userLevel)}"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    tools:text="level 2" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/appCompatCheckBox"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="?android:attr/listChoiceIndicatorMultiple"
+                android:backgroundTint="@color/blue"
+                android:button="@null"
+                android:checked="@{item.check? true : false,default = true}"
+                android:clickable="false"
+                android:enabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+</layout>

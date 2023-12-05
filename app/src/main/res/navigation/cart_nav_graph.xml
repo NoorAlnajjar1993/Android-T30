@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cart_nav_graph"
+    app:startDestination="@id/currenciesCartFragment">
+
+    <fragment
+        android:id="@+id/currenciesCartFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.shoppingcart.fragment.CurrenciesCartFragment"
+        android:label="CurrenciesCartFragment"
+        tools:layout="@layout/fragment_currencies_cart" />
+
+    <fragment
+        android:id="@+id/subscriptionsCartFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.shoppingcart.fragment.SubscriptionsCartFragment"
+        android:label="SubscriptionsCartFragment"
+        tools:layout="@layout/fragment_subscriptions_cart" />
+
+    <fragment
+        android:id="@+id/offersCartFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.shoppingcart.fragment.OffersCartFragment"
+        android:label="OffersCartFragment"
+        tools:layout="@layout/fragment_offers_cart" />
+
+    <fragment
+        android:id="@+id/accessoriesCartFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.shoppingcart.fragment.AccessoriesCartFragment"
+        android:label="AccessoriesCartFragment"
+        tools:layout="@layout/fragment_accessories_cart" />
+
+    <fragment
+        android:id="@+id/buyNowFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.shoppingcart.dialog.BuyNowFragment"
+        android:label="BuyNowFragment"
+        tools:layout="@layout/fragment_buy_now" />
+
+    <fragment
+        android:id="@+id/giftCartFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.shoppingcart.fragment.GiftCartFragment"
+        android:label="GiftCartFragment"
+        tools:layout="@layout/fragment_gift_cart" />
+
+    <fragment
+        android:id="@+id/diamondsCartFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.shoppingcart.fragment.DiamondsCartFragment"
+        android:label="DiamondsCartFragment"
+        tools:layout="@layout/fragment_diamonds_cart" />
+
+</navigation>

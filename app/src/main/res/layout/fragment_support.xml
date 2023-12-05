@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_12sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_12sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/status_bar_size" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/ic_back_long"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl_v_top" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="الدعم والمساعدة"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+            app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+            app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+            app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_ItemSupport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back"
+            tools:itemCount="2"
+            tools:listitem="@layout/row_item_support" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_ItemDataSupport"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+            app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+            app:layout_constraintTop_toBottomOf="@+id/rv_ItemSupport"
+            tools:itemCount="5"
+            tools:listitem="@layout/row_item_support_data" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

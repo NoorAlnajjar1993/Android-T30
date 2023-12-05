@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_dialog">
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layoutDirection="rtl"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_close"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_26sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_26sdp" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{viewModel.titleConfirmDelete}"
+                    android:textColor="@color/text_color_"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_close"
+                    app:tvFontType="BOLD"
+                    tools:text="هل تريد تعطيل حسابك؟" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/tv_subTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:text="عند تعطيل الحساب ستخسر تقدمك والمقتنيات التي حصلت عليها على هذا الحساب حتى الان"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="@{viewModel.isConfirmDelete ? View.GONE : View.VISIBLE}"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                    app:tvFontType="REGULAR" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextInputLayout
+                    android:id="@+id/til_ConfirmDelete"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:visibility="@{viewModel.isConfirmDelete ? View.VISIBLE : View.GONE}"
+                    app:boxStrokeColor="@color/blue"
+                    app:boxStrokeWidth="2dp"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_subTitle"
+                    app:passwordToggleEnabled="false"
+                    app:passwordToggleTint="@color/text_default_color">
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextInputEditText
+                        android:id="@+id/et_ConfirmDelete"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/strok_blue"
+                        android:hint="اكتب هنا"
+                        android:inputType="textEmailAddress"
+                        android:text="@{viewModel.confirmDeleteAccount}"
+                        android:textColor="@color/black"
+                        android:textColorHint="#45454580"
+                        android:textSize="@dimen/_12ssp" />
+                </com.dominate.thirtySecondsChallenge.base.views.AppTextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/til_ConfirmDelete">
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/tv_DeleteAccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/strok_red"
+                        android:drawableTintMode="src_over"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:text="تعطيل الحساب"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/red_"
+                        android:textSize="@dimen/_20ssp"
+                        app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                        app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toBottomOf="@+id/til_ConfirmDelete"
+                        app:tvFontType="MEDIUM" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/tv_privacyPolicy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:text="سياسة الخصوصية"
+                        android:textColor="@color/text_color_"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="@{viewModel.isConfirmDelete ? View.VISIBLE : View.GONE}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                        app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_DeleteAccount"
+                        app:tvFontType="BOLD"
+                        app:tvUnderline="true" />
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

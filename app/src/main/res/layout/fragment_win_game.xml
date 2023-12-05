@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.gamelobbyinterface.GameLobbyViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp"
+            android:elevation="@dimen/_2sdp"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/claim_rewards" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/_60sdp" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:elevation="@dimen/_6sdp"
+                android:src="@drawable/ic_stars_win"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                android:id="@+id/appImageView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_5sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_top_bgs"
+                app:layout_constraintEnd_toStartOf="@+id/appImageView11"
+                app:layout_constraintStart_toEndOf="@+id/appImageView12"
+                app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:elevation="@dimen/_5sdp"
+                android:gravity="center"
+                android:paddingTop="@dimen/_12sdp"
+                android:text="انت الفائز!"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/appImageView10"
+                app:layout_constraintEnd_toEndOf="@+id/appImageView10"
+                app:layout_constraintStart_toStartOf="@+id/appImageView10"
+                app:layout_constraintTop_toTopOf="@+id/appImageView10"
+                app:tvFontType="MEDIUM" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                android:id="@+id/appImageView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:elevation="@dimen/_3sdp"
+                android:src="@drawable/ic_left_bgs"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                android:id="@+id/appImageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:elevation="@dimen/_3sdp"
+                android:src="@drawable/ic_right_bgs"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+                android:id="@+id/appCardView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:backgroundTint="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_dialog">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_v_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_begin="@dimen/_60sdp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_v_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_v_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="@dimen/_16sdp" />
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/iv_personPlayer"
+                        ivImageUrl="@{viewModel.isUserWin? viewModel.userImage : viewModel.playerImage}"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
+                        android:layout_margin="@dimen/_10sdp"
+                        app:civ_border="true"
+                        app:civ_border_color="#6E45E2"
+                        app:civ_border_width="2dp"
+                        app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                        app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toTopOf="@+id/gl_v_top"
+                        tools:src="@drawable/ic_test_person" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/appTextView47"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:text="@{viewModel.isUserWin? viewModel.userName : viewModel.playerName}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                        app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_personPlayer"
+                        app:tvFontType="BOLD"
+                        tools:text="Hassan Hasanat" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/appTextView48"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="تهانينا! ، لقد فزت في التحدي"
+                        android:textColor="@color/text_color_"
+                        android:textSize="@dimen/_18ssp"
+                        app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                        app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toBottomOf="@+id/appTextView47"
+                        app:tvFontType="BOLD" />
+
+                    <View
+                        android:id="@+id/view10"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/lite_gray"
+                        app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                        app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toBottomOf="@+id/appTextView48" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/appTextView49"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="النتيجة"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                        app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toBottomOf="@+id/view10" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/appTextView50"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.userName}"
+                        android:textColor="#454545"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                        app:layout_constraintTop_toBottomOf="@+id/appTextView49"
+                        app:tvFontType="BOLD"
+                        tools:text="Hassan Hasanat" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(viewModel.userPointsFinish)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11sdp"
+                        app:tvFontType="NUMBER"
+                        app:layout_constraintBottom_toBottomOf="@+id/appTextView50"
+                        app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toTopOf="@+id/appTextView50"
+                        tools:text="3" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/tv_player"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="@{viewModel.playerName}"
+                        android:textColor="#454545"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                        app:layout_constraintTop_toBottomOf="@+id/appTextView50"
+                        app:tvFontType="BOLD"
+                        tools:text="Osama Abdullah" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(viewModel.playerPointsFinish)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_11sdp"
+                        app:tvFontType="NUMBER"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_player"
+                        app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toTopOf="@+id/tv_player"
+                        tools:text="1" />
+
+                    <View
+                        android:id="@+id/view11"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/lite_gray"
+                        app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                        app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_player" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/appTextView52"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="المكافآت"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                        app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                        app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toBottomOf="@+id/appTextView52">
+
+                        <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:src="@drawable/ic_coin" />
+
+                        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            tools:text="100+"
+                            android:text="@{String.valueOf(viewModel.userCoins)}"
+                            android:textColor="#454545"
+                            android:textSize="@dimen/_11sdp"
+                            app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                            app:layout_constraintTop_toBottomOf="@+id/appTextView49"
+                            app:tvFontType="NUMBER" />
+
+                        <View
+                            android:layout_width="@dimen/_8sdp"
+                            android:layout_height="0dp" />
+
+                        <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:src="@drawable/ic_mask" />
+
+                        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:text="+ xp"
+                            android:textColor="#454545"
+                            android:textSize="@dimen/_11sdp"
+                            app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                            app:layout_constraintTop_toBottomOf="@+id/appTextView49"
+                            app:tvFontType="BOLD" />
+
+                        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            tools:text="45"
+                            android:text="@{String.valueOf(viewModel.userXp)}"
+                            android:textColor="#454545"
+                            android:textSize="@dimen/_11sdp"
+                            app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                            app:layout_constraintTop_toBottomOf="@+id/appTextView49"
+                            app:tvFontType="NUMBER" />
+
+                    </LinearLayout>
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppButton
+                        android:id="@+id/btn_CollectRewards"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:text="اجمع المكافآت"
+                        app:btnFontType="MEDIUM"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+                        app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout15" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

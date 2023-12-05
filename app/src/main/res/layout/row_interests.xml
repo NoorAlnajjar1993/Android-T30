@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.dominate.thirtySecondsChallenge.data.model.profile.InterestsResponseModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_4sdp">
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+            android:id="@+id/appCardView2"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:backgroundTint="@color/card_color"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@null">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{item.visible ? View.VISIBLE : View.GONE}">
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/iv_icons"
+                    ivImageUrl="@{item.imageUrl}"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/ic_badges_test" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+
+        <!--        <com.dominate.thirtySecondsChallenge.base.views.AppTextView-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            tools:text="فوز"-->
+        <!--            android:layout_marginTop="@dimen/_4sdp"-->
+        <!--            android:visibility="@{!item.winTitle.isEmpty() ? View.VISIBLE : View.GONE}"-->
+        <!--            android:gravity="center"-->
+        <!--            android:text="@{item.winTitle}"-->
+        <!--            android:textColor="@color/yellow"-->
+        <!--            app:tvFontType="REGULAR"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/appCardView2"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/appCardView2"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/appCardView2" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

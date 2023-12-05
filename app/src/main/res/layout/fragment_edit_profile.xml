@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_15sdp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_16sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="@dimen/status_bar_size" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+                    android:id="@+id/appCardView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:elevation="@dimen/_3sdp"
+                    app:cardCornerRadius="@dimen/_18sdp"
+                    app:cardElevation="@dimen/_3sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                        android:id="@+id/appImageView2"
+                        ivImageUrl="@{viewModel.imagePersonBackground}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        tools:src="@drawable/ic_test_profile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:padding="@dimen/_8sdp"
+                    android:elevation="@dimen/_4sdp"
+                    android:src="@drawable/ic_back_long"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/gl_v_top" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/iv_edit_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_16sdp"
+                    android:elevation="@dimen/_4sdp"
+                    android:src="@drawable/ic_edit_profile"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/iv_back" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/iv_ImageProfile"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_edit_profile"
+                    android:elevation="@dimen/_5sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivPerson"
+                    app:layout_constraintEnd_toStartOf="@+id/ivPerson"
+                    app:layout_constraintStart_toStartOf="@+id/ivPerson"
+                    app:layout_constraintTop_toTopOf="@+id/ivPerson" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/ivPerson"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    ivImageUrl="@{viewModel.imagePerson}"
+                    tools:src="@drawable/ic_test_person"
+                    app:civ_border="true"
+                    android:elevation="@dimen/_3sdp"
+                    app:civ_border_color="#6E45E2"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/appCardView10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/appCardView10" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:alpha="0.3"
+                    android:background="@color/lite_gray"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/ivPerson" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="حدد الانجازات التي تريد اظهارها"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@id/view"
+                    app:tvFontType="BOLD" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_EditAchievements"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/appTextView13"
+                    app:spanCount="4"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/row_achievements" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:alpha="0.3"
+                    android:background="@color/lite_gray"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_EditAchievements" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="حدد المكافئات التي تريد اظهارها"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@id/view2"
+                    app:tvFontType="BOLD" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_EditLevelRewards"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/appTextView14"
+                    app:spanCount="4"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/row_level_reward" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:alpha="0.3"
+                    android:background="@color/lite_gray"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_EditLevelRewards" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="حدد الهدايا التي تريد اظهارها"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@id/view3"
+                    app:tvFontType="BOLD" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_EditGifts"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/appTextView15"
+                    app:spanCount="4"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/row_badges" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:alpha="0.3"
+                    android:background="@color/lite_gray"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_EditGifts" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="حدد الاهتمامات التي تريد اظهارها"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@id/view4"
+                    app:tvFontType="BOLD" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/tv_AddItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/ic_add"
+                    android:drawableTint="@color/green"
+                    android:text="اضافة"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/appTextView16"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintTop_toTopOf="@+id/appTextView16"
+                    app:tvFontType="BOLD" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_EditInterests"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/appTextView16"
+                    app:spanCount="4"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/row_interests" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:id="@+id/tv_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/strok_blue"
+            android:includeFontPadding="false"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="حفظ"
+            android:textColor="@color/button_color"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:tvFontType="MEDIUM" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

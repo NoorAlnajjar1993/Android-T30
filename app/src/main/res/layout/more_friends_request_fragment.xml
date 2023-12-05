@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.friends.FriendViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_sheet_white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_8sdp">
+
+        <View
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@color/text_gray_color" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:id="@+id/tv_SendAGift"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:paddingStart="@dimen/_18sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_18sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:drawableStart="@drawable/ic_gift_friends"
+            android:drawablePadding="@dimen/_12sdp"
+            android:text="ارسال هدية"
+            android:textAppearance="@style/regularFontStyle"
+            android:textColor="#454545"
+            android:textSize="@dimen/_14ssp"
+            app:tvFontType="BOLD" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@color/text_gray_color" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:id="@+id/tv_SendAGame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_18sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_18sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:drawableStart="@drawable/ic_request_game"
+            android:drawablePadding="@dimen/_12sdp"
+            android:text="دعوة الى لعبة"
+            android:textAppearance="@style/regularFontStyle"
+            android:textColor="#454545"
+            android:textSize="@dimen/_14ssp"
+            app:tvFontType="BOLD" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@color/text_gray_color" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:id="@+id/tv_BlockUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_18sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_18sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:drawableStart="@drawable/ic_block"
+            android:drawablePadding="@dimen/_12sdp"
+            android:text="حظر"
+            android:textAppearance="@style/regularFontStyle"
+            android:textColor="#FF5959"
+            android:textSize="@dimen/_14ssp"
+            app:tvFontType="BOLD" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@color/text_gray_color" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:text=""
+            android:textAppearance="@style/regularFontStyle"
+            android:textColor="#FF5959"
+            android:textSize="@dimen/_14ssp" />
+
+    </LinearLayout>
+</layout>

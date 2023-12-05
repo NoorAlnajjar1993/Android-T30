@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="item"
+            type="com.dominate.thirtySecondsChallenge.ui.ongoinggames.model.OngoingGameModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp">
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/card_color"
+            android:elevation="@dimen/_3sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@null">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_10sdp"
+                    tools:text="عامة"
+                    android:text="@{item.statusGame ? @string/public_view : @string/private_view , default = @string/public_view }"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/appImageView5"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:src="@{item.statusGame ? @drawable/ic_lock_on : @drawable/ic_lock_off , default = @drawable/ic_lock_on }"
+                    app:layout_constraintBottom_toBottomOf="@+id/appTextView22"
+                    app:layout_constraintStart_toEndOf="@+id/appTextView22"
+                    app:layout_constraintTop_toTopOf="@+id/appTextView22" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/ivPersonOne"
+                    android:layout_width="@dimen/_45sdp"
+                    imageRec="@{item.playerOne}"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:elevation="@dimen/_3sdp"
+                    android:scaleType="centerInside"
+                    app:civ_border="true"
+                    app:civ_border_color="#6E45E2"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/ic_test_person" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/ivPersonTwo"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    imageRec="@{item.playerTwo}"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:elevation="@dimen/_3sdp"
+                    android:scaleType="centerInside"
+                    app:civ_border="true"
+                    app:civ_border_color="#6E45E2"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivPersonOne"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/ic_test_person" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/strok_corner_blue"
+                    android:paddingStart="@dimen/_18sdp"
+                    android:paddingEnd="@dimen/_18sdp"
+                    android:text="مشاهدة"
+                    android:textSize="@dimen/_10ssp"
+                    android:enabled="@{item.statusGame}"
+                    android:alpha="@{item.statusGame ? 1.0f : 0.5f}"
+                    app:tvFontType="MEDIUM"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/appTextView22" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

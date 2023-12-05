@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.player.PlayerViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/bottom_sheet_white"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_8sdp">
+
+        <View
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@color/text_gray_color" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:id="@+id/tv_RemoveFriends"
+            app:tvFontType="BOLD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:drawableStart="@drawable/ic_remove_"
+            android:drawablePadding="@dimen/_12sdp"
+            android:text="الغاء الصداقة"
+            android:textAppearance="@style/regularFontStyle"
+            android:textColor="#FF5959"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="@{viewModel.statusPlayerId == 3 ? View.VISIBLE : View.GONE , default = visible}" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_8sdp"
+            android:visibility="@{viewModel.statusPlayerId == 3 ? View.VISIBLE : View.GONE , default = visible}"
+            android:background="@color/text_gray_color" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            app:tvFontType="BOLD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:drawableStart="@drawable/ic_block"
+            android:drawablePadding="@dimen/_12sdp"
+            android:text="حظر"
+            android:textAppearance="@style/regularFontStyle"
+            android:textColor="#FF5959"
+            android:textSize="@dimen/_14ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@color/text_gray_color" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:id="@+id/tv_report"
+            app:tvFontType="BOLD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:drawableStart="@drawable/ic_report"
+            android:drawablePadding="@dimen/_12sdp"
+            android:text="ابلاغ"
+            android:textAppearance="@style/regularFontStyle"
+            android:textColor="#454545"
+            android:textSize="@dimen/_14ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@color/text_gray_color" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:text=""
+            android:textAppearance="@style/regularFontStyle"
+            android:textColor="#FF5959"
+            android:textSize="@dimen/_14ssp" />
+
+    </LinearLayout>
+
+</layout>

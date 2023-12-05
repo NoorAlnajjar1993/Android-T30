@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="item"
+            type="com.dominate.thirtySecondsChallenge.ui.auctionround.model.CountAnswerModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:id="@+id/appTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:gravity="center"
+            android:text="@{String.valueOf(item.countItem)}"
+            tools:text="1"
+            android:textColor="@{item.selected ? @color/text_color_ : @color/black , default =  @color/black}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:backgroundTint="@color/lite_gray"
+            app:layout_constraintTop_toBottomOf="@+id/appTextView" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

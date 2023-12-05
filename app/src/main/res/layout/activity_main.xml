@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.main.MainViewModel" />
+
+        <variable
+            name="authViewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.auth.AuthViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/AppTheme.Splash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_background"
+        tools:context=".ui.main.MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_general"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_85sdp"
+            android:layout_marginTop="@dimen/status_bar_size"
+            android:elevation="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvNotificationCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:elevation="0dp"
+                android:visibility="@{authViewModel.countNotification != null &amp;&amp; !authViewModel.countNotification.isEmpty ? View.VISIBLE : View.GONE}"
+                app:cardBackgroundColor="#FF0000"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="1dp"
+                app:layout_constraintBottom_toTopOf="@+id/iv_notification"
+                app:layout_constraintEnd_toStartOf="@+id/iv_notification"
+                app:layout_constraintStart_toStartOf="@+id/iv_notification"
+                app:layout_constraintTop_toTopOf="@+id/iv_notification">
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/tvNotificationCount"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@{authViewModel.countNotification}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tvFontType="NUMBER"
+                    tools:text="10+" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                android:id="@+id/iv_notification"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/ic_ellipse"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_notification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                android:id="@+id/iv_paper"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/ic_ellipse"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_iconamoon_news"
+                app:layout_constraintEnd_toStartOf="@+id/iv_notification"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                android:id="@+id/iv_Profile"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@drawable/ic_ellipse"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="@+id/iv_notification"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_notification">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_diamondPlus"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:elevation="2dp"
+                        android:src="@drawable/ic_diamond_plus"
+                        app:layout_constraintBottom_toBottomOf="@+id/appTextView11"
+                        app:layout_constraintEnd_toStartOf="@+id/appTextView11"
+                        app:layout_constraintStart_toStartOf="@+id/appTextView11"
+                        app:layout_constraintTop_toTopOf="@+id/appTextView11" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/appTextView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@drawable/strok_tv"
+                        android:gravity="left|center"
+                        android:includeFontPadding="true"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:text="@{authViewModel.diamonds == null &amp;&amp; authViewModel.diamonds.isEmpty() ? @string/default_result_xp : authViewModel.diamonds}"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tvFontType="NUMBER"
+                        tools:text="باقي يوم" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_CoinPlus"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:elevation="2dp"
+                        android:src="@drawable/ic_coins_plus"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_coin"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_coin"
+                        app:layout_constraintStart_toStartOf="@+id/tv_coin"
+                        app:layout_constraintTop_toTopOf="@+id/tv_coin" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/tv_coin"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@drawable/strok_tv"
+                        android:gravity="left|center"
+                        android:includeFontPadding="true"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:text="@{authViewModel.coins == null &amp;&amp; authViewModel.coins.isEmpty() ? @string/default_result_xp : authViewModel.coins}"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tvFontType="NUMBER"
+                        tools:text="84755" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_levels"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_iconRate"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:elevation="2dp"
+                        android:src="@drawable/ic_mask"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_xp"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_xp"
+                        app:layout_constraintStart_toStartOf="@+id/tv_xp"
+                        app:layout_constraintTop_toTopOf="@+id/tv_xp" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/tv_xp"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@drawable/strok_tv"
+                        android:gravity="left|center"
+                        android:includeFontPadding="true"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:text="@{authViewModel.levelXpResult == null &amp;&amp; authViewModel.levelXpResult.isEmpty() ? @string/default_result_level : authViewModel.levelXpResult}"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tvFontType="NUMBER"
+                        tools:text="847/454" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="@dimen/_3sdp"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@{authViewModel.levelUpCount}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/iv_iconRate"
+                        app:layout_constraintEnd_toEndOf="@+id/iv_iconRate"
+                        app:layout_constraintStart_toStartOf="@+id/iv_iconRate"
+                        app:layout_constraintTop_toTopOf="@+id/iv_iconRate"
+                        app:tvFontType="NUMBER"
+                        tools:text="2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/onBoardingNavContainer"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@+id/bnv_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/onboarding_nav_graph" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bnv_main"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@drawable/ic_rectangle"
+            android:elevation="@dimen/_2sdp"
+            android:padding="@dimen/_3sdp"
+            app:elevation="@dimen/_2sdp"
+            app:itemIconSize="@dimen/_16sdp"
+            app:itemIconTint="@color/color_activity_main_navigation_view_item"
+            app:itemTextColor="@color/color_activity_main_navigation_view_item"
+            app:labelVisibilityMode="unlabeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/main_navigation_menu"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

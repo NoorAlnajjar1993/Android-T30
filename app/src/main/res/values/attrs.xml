@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TextView -->
+    <declare-styleable name="AppTextView">
+        <attr name="tvUnderline" format="boolean" />
+        <attr name="tvIgnoreLocalization" format="boolean" />
+        <attr name="tvFontType" format="enum">
+            <enum name="REGULAR" value="1" />
+            <enum name="MEDIUM" value="2" />
+            <enum name="SEMI_BOLD" value="3" />
+            <enum name="BOLD" value="4" />
+            <enum name="LIGHT" value="5" />
+            <enum name="NUMBER" value="6" />
+        </attr>
+    </declare-styleable>
+
+    <!-- ImageView -->
+    <declare-styleable name="AppImageView">
+        <attr name="ivSrcRes" format="reference" />
+    </declare-styleable>
+
+    <!-- Button -->
+    <declare-styleable name="AppButton">
+        <attr name="btnFontType" format="enum">
+            <enum name="REGULAR" value="1" />
+            <enum name="MEDIUM" value="2" />
+            <enum name="SEMI_BOLD" value="3" />
+            <enum name="BOLD" value="4" />
+            <enum name="LIGHT" value="5" />
+        </attr>
+    </declare-styleable>
+
+    <!-- AppRadioButton -->
+    <declare-styleable name="AppRadioButton">
+        <attr name="rbFontType" format="enum">
+            <enum name="REGULAR" value="1" />
+            <enum name="MEDIUM" value="2" />
+            <enum name="SEMI_BOLD" value="3" />
+            <enum name="BOLD" value="4" />
+            <enum name="LIGHT" value="5" />
+        </attr>
+    </declare-styleable>
+
+    <!-- EditText -->
+    <declare-styleable name="AppTextInputEditText">
+        <attr name="etFontType" format="enum">
+            <enum name="REGULAR" value="1" />
+            <enum name="MEDIUM" value="2" />
+            <enum name="SEMI_BOLD" value="3" />
+            <enum name="BOLD" value="4" />
+            <enum name="LIGHT" value="5" />
+        </attr>
+    </declare-styleable>
+
+    <!-- Hint Spinner -->
+    <declare-styleable name="HintSpinner">
+        <attr name="spinnerErrorMessage" format="string"/>
+    </declare-styleable>
+
+</resources>

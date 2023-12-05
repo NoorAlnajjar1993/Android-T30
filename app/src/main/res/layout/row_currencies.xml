@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.dominate.thirtySecondsChallenge.data.model.store.CoinsResponseModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_3sdp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/appCardView5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            app:cardCornerRadius="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradiant_currencies">
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@{item.title}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="صندوق قروش" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:elevation="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/appTextView30">
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                        android:layout_width="@dimen/_13sdp"
+                        android:layout_height="@dimen/_13sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_coin" />
+
+                    <View
+                        android:layout_width="@dimen/_3sdp"
+                        android:layout_height="1dp" />
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                        android:id="@+id/appTextView32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(item.earnCoins)}"
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/_11ssp"
+                        tools:text="50.000" />
+
+                </LinearLayout>
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/appImageView3"
+                    ivImageUrl="@{item.imageUrl}"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@android:color/transparent"
+                    tools:src="@drawable/ic_coint_cart_test_1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/yellow"
+                    android:gravity="center"
+                    android:padding="@dimen/_2sdp"
+                    android:text="@{String.valueOf(item.earnCoins)}"
+                    android:textColor="@color/text_color_"
+                    android:visibility="@{item.discount != 0? View.VISIBLE : View.GONE,default = gone}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:tvFontType="BOLD"
+                    tools:text="10% Off" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCardView5">
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="@dimen/_13sdp"
+                android:src="@{item.currencyId == 1 ? @drawable/ic_coin : @drawable/ic_jawaher}"
+                android:visibility="@{item.currencyId != 2? View.VISIBLE : View.GONE,default = visible}"
+                tools:src="@drawable/ic_coin" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                android:id="@+id/tv_price_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{' ' + String.valueOf(item.priceAfterDiscount) + (item.currencyId == 2 ? ' ' + item.currencyIsoCode : ' ')}"
+                android:textColor="@{item.discount != 0? @color/white : @color/yellow , default = @color/yellow}"
+                android:textSize="@dimen/_12ssp"
+                app:tvFontType="BOLD"
+                tools:text="10.000" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/text_default_color"
+            android:visibility="@{item.discount != 0? View.VISIBLE : View.GONE,default = gone}"
+            app:layout_constraintBottom_toBottomOf="@+id/linear"
+            app:layout_constraintEnd_toEndOf="@+id/linear"
+            app:layout_constraintStart_toStartOf="@+id/linear"
+            app:layout_constraintTop_toTopOf="@+id/linear" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:id="@+id/appTextView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:elevation="@dimen/_5sdp"
+            android:text="@{String.valueOf(item.priceAfterDiscount)}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="@{item.discount != 0 ? View.VISIBLE : View.GONE,default = gone}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear"
+            app:tvFontType="BOLD"
+            tools:text="10.000KWD" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

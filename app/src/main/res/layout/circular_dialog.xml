@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="message"
+            type="String" />
+
+        <variable
+            name="image"
+            type="Integer" />
+
+        <variable
+            name="subMessage"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+            android:id="@+id/appImageView20"
+            imageRec="@{image}"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:src="@drawable/ic_circuler_green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/appImageView20"
+            app:layout_constraintEnd_toEndOf="@+id/appImageView20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appImageView20">
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                android:id="@+id/appTextView44"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="@dimen/_5sdp"
+                android:gravity="center"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@{message}"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tvFontType="MEDIUM"
+                tools:text="Message" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="@dimen/_5sdp"
+                android:gravity="center"
+                android:paddingStart="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@{subMessage}"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="@{subMessage != null? View.VISIBLE : View.GONE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appTextView44"
+                app:tvFontType="REGULAR"
+                tools:text="السؤال التالي" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.friends.FriendViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_16sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/status_bar_size" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/ic_back_long"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl_v_top" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.HintSpinner
+            android:id="@+id/hs_leaderFilter"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="@drawable/spinner_background"
+            android:fontFamily="@font/ar_light_font"
+            android:popupBackground="@drawable/shape_spinner_bg"
+            android:popupElevation="@dimen/_3sdp"
+            android:selectedItemPosition="@={viewModel.selectedPosition}"
+            android:textAlignment="viewStart"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+            app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLeaderBoard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fadeScrollbars="false"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+            app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+            app:layout_constraintTop_toBottomOf="@+id/hs_leaderFilter"
+            tools:itemCount="5"
+            tools:listitem="@layout/row_leader_board" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

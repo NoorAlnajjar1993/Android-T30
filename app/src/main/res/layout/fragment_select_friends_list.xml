@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_16sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_35sdp" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_back_long"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl_v_top" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_Search"
+            style="@style/AppTheme.EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/iv_back"
+            app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+            app:layout_constraintTop_toTopOf="@+id/gl_v_top">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_filters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/ar_regular_font"
+                android:imeOptions="actionDone"
+                android:hint="بحث..."
+                android:inputType="textCapWords|text"
+                android:pointerIcon="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toStartOf="@+id/gl_End"
+                app:layout_constraintStart_toStartOf="@+id/gl_Start"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        android:visibility="@{viewModel.isEmptyListFriends ? View.GONE : View.VISIBLE,default = visible}"-->
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cb_SelectAll"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:background="?android:attr/listChoiceIndicatorMultiple"
+            android:backgroundTint="@color/blue"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            android:button="@null"
+            app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+            app:layout_constraintTop_toBottomOf="@+id/et_Search" />
+
+<!--        android:visibility="@{viewModel.isEmptyListFriends ? View.GONE : View.VISIBLE,default = visible}"-->
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:id="@+id/appTextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تحديد الكل"
+            android:visibility="gone"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/cb_SelectAll"
+            app:layout_constraintStart_toEndOf="@+id/cb_SelectAll"
+            app:layout_constraintTop_toTopOf="@+id/cb_SelectAll"
+            app:tvFontType="BOLD" />
+
+        <!--        android:layoutAnimation="@anim/layout_animation_side_left"-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_SelectFriendsList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/btn_SendGift"
+            app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+            app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+            app:layout_constraintTop_toBottomOf="@+id/cb_SelectAll"
+            tools:itemCount="2"
+            tools:listitem="@layout/row_choose_friends" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppButton
+            android:id="@+id/btn_SendGift"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:text="أرسل هدية"
+            android:visibility="@{viewModel.isEmptyListFriends ? View.GONE : View.VISIBLE,default = visible}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+            app:layout_constraintStart_toStartOf="@+id/gl_v_start" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/iv_no_friends"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:elevation="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:scaleType="centerInside"
+            android:visibility="@{viewModel.isEmptyListFriends ? View.VISIBLE : View.GONE,default = gone}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_Search"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/no_friends_yet" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:id="@+id/tv_EmptyList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="لا يوجد أصدقاء حتى الآن"
+            android:visibility="@{viewModel.isEmptyListFriends ? View.VISIBLE : View.GONE,default = gone}"
+            app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+            app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+            app:layout_constraintTop_toBottomOf="@+id/iv_no_friends"
+            app:tvFontType="BOLD" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

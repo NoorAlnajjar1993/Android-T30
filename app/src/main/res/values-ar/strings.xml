@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">30 Seconds Challenge</string>
+
+    <string name="alert_dialog_title">تحدي 30 ثانية</string>
+    <string name="facebook_app_id">266093285834819</string>
+    <string name="facebook_client_token">e2e48bc4cd332a44cef3fc910bedeea2</string>
+    <string name="web_client_id">AIzaSyDgcEK-4gTQf58SGJ1y5-q0Pf5-o2Yfze0</string>
+
+    <!-- General -->
+    <string name="cancel">الغاء</string>
+    <string name="select">اختر</string>
+    <string name="loading">جاري التحميل…</string>
+    <string name="ok">موافق</string>
+    <string name="none">بدون</string>
+    <string name="edit">تعديل</string>
+    <string name="skip">تخطي</string>
+    <string name="next">التالي</string>
+
+    <string name="english">English</string>
+    <string name="arabic">العربية</string>
+
+    <string name="empty_string_"> </string>
+    <string name="empty_string" />
+
+    <string name="btn_try_again">حاول مرة ثانية</string>
+    <string name="error_no_internet">"لا يوجد اتصال بالشبكة!"</string>
+    <string name="error_server">حدث خطأ</string>
+    <string name="error_msg">حدث خطأ</string>
+    <string name="session_ended">حدث خطأ</string>
+    <string name="verification">"رمز التحقق"</string>
+    <string name="hint_spinnrt_gender">اختر</string>
+
+    <!-- On Boarding-->
+    <string name="title_on_boarding_step_one">اجمع أصدقاءك واستعد لمسابقات وتحديات مثيرة!</string>
+    <string name="title_on_boarding_step_two">ابدأ المغامرة, واختبر قدراتك وسرعتك في تحدي الثلاثين</string>
+    <string name="title_on_boarding_step_three">ادخل في منافسة مع لاعبين آخرين واحصل على مكافآت</string>
+    <string name="choose_your_interests">اختر اهتماماتك</string>
+    <string name="start">ابدأ</string>
+    <string name="save">حفظ</string>
+
+    <!--profile-->
+    <string name="hint_enter_first_name">أدخل الاسم الأول</string>
+    <string name="hint_enter_last_name">أدخل الاسم الأخير</string>
+    <string name="hint_enter_email">أدخل الايميل</string>
+    <string name="hint_enter_mobile">أدخل رقم الموبايل</string>
+
+    <!--main-->
+    <string name="default_result_xp">0</string>
+    <string name="default_result_level">0/0</string>
+
+    <string name="public_view">عامة</string>
+    <string name="private_view">خاصة</string>
+
+    <!--friends-->
+    <string name="status_online">متصل</string>
+    <string name="status_offline">غير متصل</string>
+    <string name="level">المستوى</string>
+
+    <string name="msg_confirm_delete_err">لتأكيد عملية تعطيل الحساب يرجي كتابة كلمة “تعطيل”</string>
+    <string name="discount_ic">% خصم</string>
+
+</resources>

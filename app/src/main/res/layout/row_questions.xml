@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.dominate.thirtySecondsChallenge.data.signalR.isready.AnswerModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_5sdp">
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@{item.selected ? @color/text_color_ : @android:color/transparent, default =@color/text_color_ }"
+            app:cardCornerRadius="@dimen/_25sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@{item.selected ? @color/text_color_ : @color/white , default = @color/text_color_}"
+            app:strokeWidth="1dp">
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingStart="@dimen/_6sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:includeFontPadding="false"
+                android:paddingEnd="@dimen/_6sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@{item.AnswerTitle}"
+                android:textSize="@dimen/_12ssp"
+                app:tvFontType="BOLD"
+                tools:text="بنجامين ميندي" />
+
+        </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

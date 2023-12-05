@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_nav_garph"
+    app:startDestination="@id/whatDoYouKnowFragment">
+
+    <fragment
+        android:id="@+id/whatDoYouKnowFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.whatdoyouknow.WhatDoYouKnowFragment"
+        android:label="WhatDoYouKnowFragment"
+        tools:layout="@layout/fragment_what_do_you_know">
+        <action
+            android:id="@+id/action_whatDoYouKnowFragment_to_auctionRoundFragment"
+            app:destination="@id/auctionRoundFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_whatDoYouKnowFragment_to_lossGameFragment"
+            app:destination="@id/lossGameFragment" />
+        <action
+            android:id="@+id/action_whatDoYouKnowFragment_to_winGameFragment"
+            app:destination="@id/winGameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/auctionRoundFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.auctionround.AuctionRoundFragment"
+        android:label="AuctionRoundFragment"
+        tools:layout="@layout/fragment_auction_round" />
+    <dialog
+        android:id="@+id/lossGameFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.endgame.lossgame.LossGameFragment"
+        android:label="LossGameFragment"
+        tools:layout="@layout/fragment_loss_game" />
+    <dialog
+        android:id="@+id/winGameFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.endgame.wingame.WinGameFragment"
+        android:label="WinGameFragment"
+        tools:layout="@layout/fragment_win_game" />
+
+
+    <action
+        android:id="@+id/action_global_homeFragments"
+        app:destination="@id/onboarding_nav_graph" />
+
+</navigation>

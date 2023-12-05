@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background color for the card view -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/black" />
+            <corners
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp"
+                android:bottomRightRadius="28dp"
+                android:bottomLeftRadius="28dp" />
+        </shape>
+    </item>
+
+    <!-- Top corners with zero radius -->
+    <item android:top="0dp">
+        <shape android:shape="rectangle">
+            <corners android:topLeftRadius="0dp" android:topRightRadius="0dp" />
+        </shape>
+    </item>
+
+    <!-- Bottom corners with a specific radius -->
+    <item android:bottom="@dimen/_18sdp">
+        <shape android:shape="rectangle">
+            <corners android:bottomLeftRadius="8dp" android:bottomRightRadius="8dp" />
+        </shape>
+    </item>
+
+</layer-list>

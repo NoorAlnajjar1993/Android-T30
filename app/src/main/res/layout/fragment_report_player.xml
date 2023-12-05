@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.player.PlayerViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_sheet_white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_8sdp">
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:drawablePadding="@dimen/_12sdp"
+            android:text="يرجى تحديد المشكلة من فضلك"
+            android:textAppearance="@style/regularFontStyle"
+            android:textColor="@color/text_color_"
+            android:textSize="@dimen/_14ssp"
+            app:tvFontType="BOLD" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_Report"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl_v_top"
+            tools:itemCount="3"
+            tools:listitem="@layout/row_report" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppRadioButton
+                android:id="@+id/tv_RemoveFriends"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_18sdp"
+                android:checked="true"
+                android:drawablePadding="@dimen/_12sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:text="حساب زائف"
+                android:textAppearance="@style/regularFontStyle"
+                android:textColor="#454545"
+                android:textSize="@dimen/_14ssp"
+                app:buttonTint="@color/blue"
+                app:tvFontType="BOLD" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@color/text_gray_color" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppRadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_18sdp"
+                android:drawablePadding="@dimen/_12sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:text="اسم زائف"
+                android:textAppearance="@style/regularFontStyle"
+                android:textColor="#454545"
+                android:textSize="@dimen/_14ssp"
+                app:buttonTint="@color/blue"
+                app:tvFontType="BOLD" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_8sdp"
+                android:background="@color/text_gray_color" />
+
+            <com.dominate.thirtySecondsChallenge.base.views.AppRadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_18sdp"
+                android:drawablePadding="@dimen/_12sdp"
+                android:paddingStart="@dimen/_8sdp"
+                android:text="اساءة أو مضايفة"
+                android:textAppearance="@style/regularFontStyle"
+                android:textColor="#454545"
+                android:textSize="@dimen/_14ssp"
+                app:buttonTint="@color/blue"
+                app:tvFontType="BOLD" />
+
+        </RadioGroup>
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppButton
+            android:id="@+id/btn_Report"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:text="ابلاغ"
+            app:backgroundTint="@color/red_"
+            app:btnFontType="MEDIUM"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+            app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+            app:layout_constraintTop_toBottomOf="@+id/rv_GiftList" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/_12sdp"
+            android:backgroundTint="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_dialog">
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_marginTop="28dp"
+                    android:layoutDirection="rtl"
+                    android:padding="@dimen/_8sdp"
+                    android:src="@drawable/ic_close"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_16sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_v_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="@dimen/_40sdp" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="الاسم الأول"
+                    android:textColor="@color/text_color_"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toTopOf="@+id/gl_v_top"
+                    app:tvFontType="BOLD" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextInputLayout
+                    android:id="@+id/til_personName"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/appTextView8"
+                    app:passwordToggleEnabled="false"
+                    app:passwordToggleTint="@color/text_default_color">
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextInputEditText
+                        android:id="@+id/et_FirstName"
+                        style="@style/TextInputEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/strok_blue2_bg"
+                        android:hint="@string/hint_enter_first_name"
+                        android:inputType="textCapWords"
+                        android:text="@{!viewModel.firstName.isEmpty() ? viewModel.firstName : @string/empty_string_}"
+                        android:textColor="#BE000000"
+                        android:textSize="@dimen/_12ssp"
+                        tools:text="Hassan" />
+                </com.dominate.thirtySecondsChallenge.base.views.AppTextInputLayout>
+
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:text="الاسم الأخير"
+                    android:textColor="@color/text_color_"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/til_personName"
+                    app:tvFontType="BOLD" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextInputLayout
+                    android:id="@+id/til_personNames"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/appTextView25"
+                    app:passwordToggleEnabled="false"
+                    app:passwordToggleTint="@color/text_default_color">
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextInputEditText
+                        android:id="@+id/et_LastName"
+                        style="@style/TextInputEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/strok_blue2_bg"
+                        android:hint="@string/hint_enter_last_name"
+                        android:inputType="textCapWords"
+                        android:text="@{!viewModel.lastName.isEmpty() ? viewModel.lastName : @string/empty_string_}"
+                        android:textColor="#BE000000"
+                        android:textSize="@dimen/_12ssp"
+                        tools:text="Hasanat" />
+                </com.dominate.thirtySecondsChallenge.base.views.AppTextInputLayout>
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextVisew25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:text="الايميل"
+                    android:textColor="@color/text_color_"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/til_personNames"
+                    app:tvFontType="BOLD" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextInputLayout
+                    android:id="@+id/til_personNasmes"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/appTextVisew25"
+                    app:passwordToggleEnabled="false"
+                    app:passwordToggleTint="@color/text_default_color">
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextInputEditText
+                        android:id="@+id/et_Email"
+                        style="@style/TextInputEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/strok_blue2_bg"
+                        android:hint="@string/hint_enter_email"
+                        android:inputType="textEmailAddress"
+                        android:text="@{!viewModel.email.isEmpty() ? viewModel.email : @string/empty_string_}"
+                        android:textColor="#BE000000"
+                        android:textSize="@dimen/_12ssp"
+                        tools:text="hassan.hasanat@dominate.com" />
+                </com.dominate.thirtySecondsChallenge.base.views.AppTextInputLayout>
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextVisssew25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center"
+                    android:text="رقم الموبايل"
+                    android:textColor="@color/text_color_"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/til_personNasmes"
+                    app:tvFontType="BOLD" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/appTextVisssew25">
+
+                    <com.dominate.thirtySecondsChallenge.base.views.AppTextInputLayout
+                        android:id="@+id/til_xxpersonNasmes"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_weight="1.5"
+                        app:hintEnabled="false"
+                        app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+                        app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toBottomOf="@+id/appTextVisew25"
+                        app:passwordToggleEnabled="false"
+                        app:passwordToggleTint="@color/text_default_color">
+
+                        <com.dominate.thirtySecondsChallenge.base.views.AppTextInputEditText
+                            android:id="@+id/et_Phone"
+                            style="@style/TextInputEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/strok_blue2_bg"
+                            android:hint="@string/hint_enter_mobile"
+                            android:inputType="phone|numberDecimal"
+                            android:text="@{!viewModel.phone.isEmpty() ? viewModel.phone : @string/empty_string_}"
+                            android:textColor="#BE000000"
+                            android:textSize="@dimen/_12ssp"
+                            tools:text="781001089" />
+                    </com.dominate.thirtySecondsChallenge.base.views.AppTextInputLayout>
+
+
+                    <View
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="1dp" />
+
+                    <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@drawable/strok_blue2_bg"
+                        android:gravity="center"
+                        android:textDirection="rtl"
+                        app:ccp_hideNameCode="true"
+                        app:ccp_showFullName="false"
+                        app:ccp_textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+                        app:layout_constraintTop_toBottomOf="@+id/til_personNasmes"
+                        tools:layout_width="@dimen/_60sdp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="0dp"
+                    android:layout_height="1.5dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@color/lite_gray"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout14" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/tv_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="تسجيل الخروج"
+                    android:textAlignment="viewStart"
+                    android:textColor="#94000000"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/view"
+                    app:tvFontType="REGULAR" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/tv_DeleteAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="تعطيل الحساب"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/red_"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_logout"
+                    app:tvFontType="REGULAR" />
+
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppButton
+                    android:id="@+id/btn_save"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:text="حفظ"
+                    android:textSize="@dimen/_15ssp"
+                    app:btnFontType="MEDIUM"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/gl_v_end"
+                    app:layout_constraintStart_toEndOf="@+id/gl_v_start"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_DeleteAccount" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.dominate.thirtySecondsChallenge.base.views.AppCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

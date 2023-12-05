@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.dominate.thirtySecondsChallenge.ui.splash.SplashViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_splash_bg"
+        android:layoutDirection="ltr">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_16sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_16sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_v_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_5sdp" />
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+            android:id="@+id/ivSplashLogo"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_150sdp"
+            android:src="@drawable/ic_logo_app"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+            app:layout_constraintStart_toStartOf="@+id/gl_v_start"
+            app:layout_constraintTop_toTopOf="@+id/gl_v_top" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/btn_Next"
+            app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+            app:layout_constraintStart_toStartOf="@+id/gl_v_start">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_English"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@{viewModel.languageName == 1? @drawable/strok_blue : @drawable/un_strok_blue , default =  @drawable/un_strok_blue}"
+                android:fontFamily="@font/en_extra_bold"
+                android:gravity="center"
+                android:text="English"
+                android:textSize="@dimen/_14ssp" />
+
+            <View
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="1dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_Arabic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@{viewModel.languageName == 1? @drawable/un_strok_blue : @drawable/strok_blue , default =  @drawable/strok_blue}"
+                android:fontFamily="@font/ar_medium_font"
+                android:gravity="center"
+                android:text="العربية"
+                android:textSize="@dimen/_14ssp" />
+
+        </LinearLayout>
+
+        <com.dominate.thirtySecondsChallenge.base.views.AppButton
+            android:id="@+id/btn_Next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gl_v_end"
+            app:layout_constraintStart_toStartOf="@+id/gl_v_start" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

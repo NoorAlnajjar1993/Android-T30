@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.graphics.Color" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.dominate.thirtySecondsChallenge.data.model.profile.UserInfoModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:elevation="@dimen/_3sdp"
+            app:cardBackgroundColor="@{item.color != null ? Color.parseColor(item.color) : @color/card_color}"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@null"
+            tools:backgroundTint="@color/card_color">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:text="@{item.countNumber}"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@{item.top ? @color/black :@color/white}"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tvFontType="NUMBER"
+                    tools:text="1" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/appImageView5"
+                    ivImageUrl="@{item.profileImageUrl}"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    app:civ_border="true"
+                    app:civ_border_color="#6E45E2"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/appTextView16"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/ic_test_person_3" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:id="@+id/appImageView4"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:elevation="@dimen/_2sdp"
+                    android:src="@drawable/ic_icon_top_leader"
+                    android:visibility="@{item.top ? View.VISIBLE :View.INVISIBLE}"
+                    android:tint="@{item.color != null ? Color.parseColor(item.color) : @color/card_color}"
+                    app:layout_constraintBottom_toBottomOf="@+id/appImageView5"
+                    app:layout_constraintEnd_toStartOf="@+id/appImageView5"
+                    app:layout_constraintStart_toStartOf="@+id/appImageView5" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/ic_crown"
+                    android:elevation="@dimen/_3sdp"
+                    android:visibility="@{item.top ? View.VISIBLE :View.INVISIBLE}"
+                    app:layout_constraintBottom_toBottomOf="@+id/appImageView4"
+                    app:layout_constraintEnd_toEndOf="@+id/appImageView4"
+                    app:layout_constraintStart_toStartOf="@+id/appImageView4"
+                    app:layout_constraintTop_toTopOf="@+id/appImageView4" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:lineHeight="@dimen/_20sdp"
+                    android:text="@{item.firstName +' '+ item.lastName}"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@{item.top ? @color/black :@color/white}"
+                    android:textSize="@dimen/_13ssp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/appImageView5"
+                    app:layout_constraintEnd_toStartOf="@+id/appImageView4"
+                    app:layout_constraintStart_toEndOf="@+id/appTextView17"
+                    app:layout_constraintTop_toTopOf="@+id/appImageView5"
+                    app:tvFontType="BOLD"
+                    android:maxLines="2"
+                    tools:text="Hassan Hasanat" />
+
+                <com.dominate.thirtySecondsChallenge.base.views.AppTextView
+                    android:id="@+id/appTextView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:lineHeight="@dimen/_20sdp"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:text="@{item.idBoard == 1 ?String.valueOf(item.gamesWinCount) : (item.idBoard == 2 ?String.valueOf(item.xp) : String.valueOf(item.sendGiftCount))}"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@{item.top ? @color/black :@color/blue}"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/appImageView5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/appImageView5"
+                    app:tvFontType="NUMBER"
+                    tools:text="2.978" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

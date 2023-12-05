@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onboarding_nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_splashFragment_to_onBoardingStepOneFragment"
+            app:destination="@id/onBoardingStepOneFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_onBoardingStepTwoFragment"
+            app:destination="@id/onBoardingStepTwoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/onBoardingStepOneFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.onboarding.OnBoardingStepOneFragment"
+        android:label="OnBoardingStepOneFragment"
+        tools:layout="@layout/fragment_on_boarding_step_one">
+
+        <action
+            android:id="@+id/action_onBoardingStepOneFragment_to_onBoardingStepTwoFragment"
+            app:destination="@id/onBoardingStepTwoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/onBoardingStepTwoFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.onboarding.OnBoardingStepTwoFragment"
+        android:label="OnBoardingStepTwoFragment"
+        tools:layout="@layout/fragment_on_boarding_step_two">
+
+        <action
+            android:id="@+id/action_onBoardingStepTwoFragment_to_onBoardingStepThreeFragment"
+            app:destination="@id/onBoardingStepThreeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/onBoardingStepThreeFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.onboarding.OnBoardingStepThreeFragment"
+        android:label="OnBoardingStepThreeFragment"
+        tools:layout="@layout/fragment_on_boarding_step_three">
+
+        <action
+            android:id="@+id/action_onBoardingStepThreeFragment_to_mainOperationFragment"
+            app:destination="@id/mainOperationFragment" />
+
+        <action
+            android:id="@+id/action_onBoardingStepThreeFragment_to_mainProfileFragment"
+            app:destination="@id/mainProfileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <argument
+            android:name="screenName"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.notification.NotificationFragment"
+        android:label="NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+
+    <navigation
+        android:id="@+id/mainOperationFragment"
+        android:label="MainOperationFragment"
+        app:startDestination="@id/homeFragment">
+
+        <fragment
+            android:id="@+id/createTournamentFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.createtournament.CreateTournamentFragment"
+            android:label="CreateTournamentFragment"
+            tools:layout="@layout/fragment_create_tournament" />
+
+        <fragment
+            android:id="@+id/ongoingGamesFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.ongoinggames.OngoingGamesFragment"
+            android:label="OngoingGamesFragment"
+            tools:layout="@layout/fragment_ongoing_games" />
+
+        <fragment
+            android:id="@+id/homeFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.home.HomeFragment"
+            android:label="HomeFragment"
+            tools:layout="@layout/fragment_home">
+
+            <argument
+                android:name="endGame"
+                android:defaultValue="-1"
+                app:argType="integer" />
+
+            <action
+                android:id="@+id/action_homeFragment_to_createGameGroupFragment"
+                app:destination="@id/createGameGroupFragment" />
+
+            <action
+                android:id="@+id/action_homeFragment_to_friendsFragment"
+                app:destination="@id/friendsFragment" />
+
+            <action
+                android:id="@+id/action_homeFragment_to_leaderBoardsFragment"
+                app:destination="@id/leaderBoardsFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+            <action
+                android:id="@+id/action_homeFragment_to_createTournamentFragment"
+                app:destination="@id/createTournamentFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+            <action
+                android:id="@+id/action_homeFragment_to_ongoingGamesFragment"
+                app:destination="@id/ongoingGamesFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+
+        </fragment>
+
+        <fragment
+            android:id="@+id/menuFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.menu.MenuFragment"
+            android:label="MenuFragment"
+            tools:layout="@layout/fragment_menu" />
+
+        <fragment
+            android:id="@+id/shoppingCartFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.shoppingcart.ShoppingCartFragment"
+            android:label="ShoppingCartFragment"
+            tools:layout="@layout/fragment_shopping_cart">
+
+            <argument
+                android:name="typeScreen"
+                android:defaultValue="-1"
+                app:argType="integer" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/selectFriendsListFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.selectfriendlist.SelectFriendsListFragment"
+            android:label="SelectFriendsListFragment"
+            tools:layout="@layout/fragment_select_friends_list" />
+
+        <navigation
+            android:id="@+id/friendsFragment"
+            android:label="MainFriendsFragment"
+            app:startDestination="@id/friendsFragment">
+
+            <fragment
+                android:id="@+id/friendsFragment"
+                android:name="com.dominate.thirtySecondsChallenge.ui.friends.FriendsFragment"
+                android:label="FriendsFragment"
+                tools:layout="@layout/fragment_friends">
+                <action
+                    android:id="@+id/action_friendsFragment_to_loyaltyFragment"
+                    app:destination="@id/loyaltyFragment"
+                    app:enterAnim="@anim/slide_in_right"
+                    app:exitAnim="@anim/slide_out_left"
+                    app:popEnterAnim="@anim/slide_in_left"
+                    app:popExitAnim="@anim/slide_out_right" />
+
+                <action
+                    android:id="@+id/action_friendsFragment_to_friendsGroupFragment"
+                    app:destination="@id/friendsGroupFragment"
+                    app:enterAnim="@anim/slide_in_right"
+                    app:exitAnim="@anim/slide_out_left"
+                    app:popEnterAnim="@anim/slide_in_left"
+                    app:popExitAnim="@anim/slide_out_right" />
+                <action
+                    android:id="@+id/action_friendsFragment_to_searchPlayersFragment"
+                    app:destination="@id/searchPlayersFragment"
+                    app:enterAnim="@anim/slide_in_right"
+                    app:exitAnim="@anim/slide_out_left"
+                    app:popEnterAnim="@anim/slide_in_left"
+                    app:popExitAnim="@anim/slide_out_right" />
+
+            </fragment>
+
+            <fragment
+                android:id="@+id/loyaltyFragment"
+                android:name="com.dominate.thirtySecondsChallenge.ui.friends.loyalty.LoyaltyFragment"
+                android:label="LoyaltyFragment"
+                tools:layout="@layout/fragment_loyalty" />
+
+            <action
+                android:id="@+id/action_global_leaderBoardsFragment"
+                app:destination="@id/leaderBoardsFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+
+            <fragment
+                android:id="@+id/friendsGroupFragment"
+                android:name="com.dominate.thirtySecondsChallenge.ui.friends.friendgroup.FriendsGroupFragment"
+                android:label="FriendsGroupFragment"
+                tools:layout="@layout/fragment_friends_group">
+                <action
+                    android:id="@+id/action_friendsGroupFragment_to_gameLobbyFragment"
+                    app:destination="@id/gameLobbyFragment" />
+            </fragment>
+
+            <fragment
+                android:id="@+id/searchPlayersFragment"
+                android:name="com.dominate.thirtySecondsChallenge.ui.search.SearchPlayersFragment"
+                android:label="SearchPlayersFragment"
+                tools:layout="@layout/fragment_search_players" />
+
+        </navigation>
+
+        <dialog
+            android:id="@+id/createGameGroupFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.creategame.CreateGameGroupFragment"
+            android:label="CreateGameGroupFragment"
+            tools:layout="@layout/fragment_create_game_group">
+            <action
+                android:id="@+id/action_createGameGroupFragment_to_gameLobbyFragment"
+                app:destination="@id/gameLobbyFragment" />
+        </dialog>
+
+        <fragment
+            android:id="@+id/leaderBoardsFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.friends.leader.LeaderBoardsFragment"
+            android:label="LeaderBoardsFragment"
+            tools:layout="@layout/fragment_leader_boards" />
+
+        <action
+            android:id="@+id/action_global_notificationFragment"
+            app:destination="@id/notificationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <navigation
+            android:id="@+id/gameLobbyFragment"
+            android:label="GameLobbyFragment"
+            app:startDestination="@id/gameLobbyInterfaceFragment">
+
+            <fragment
+                android:id="@+id/gameLobbyInterfaceFragment"
+                android:name="com.dominate.thirtySecondsChallenge.ui.gamelobbyinterface.GameLobbyInterfaceFragment"
+                android:label="GameLobbyInterfaceFragment"
+                tools:layout="@layout/fragment_game_lobby_interface">
+
+                <argument
+                    android:name="TypeGame"
+                    android:defaultValue="1"
+                    app:argType="integer" />
+
+
+                <action
+                    android:id="@+id/action_gameLobbyInterfaceFragment_to_startGameLobbyFragment"
+                    app:destination="@id/startGameLobbyFragment"
+                    app:enterAnim="@anim/slide_in_right"
+                    app:exitAnim="@anim/slide_out_left"
+                    app:popEnterAnim="@anim/slide_in_left"
+                    app:popExitAnim="@anim/slide_out_right"
+                    app:popUpTo="@id/homeFragment"
+                    app:popUpToInclusive="false" />
+            </fragment>
+
+            <argument
+                android:name="TypeGame"
+                app:argType="integer" />
+
+            <dialog
+                android:id="@+id/endGameFragment"
+                android:name="com.dominate.thirtySecondsChallenge.ui.gamelobbyinterface.dialog.EndGameFragment"
+                android:label="EndGameFragment"
+                tools:layout="@layout/fragment_end_game" />
+
+            <fragment
+                android:id="@+id/startGameLobbyFragment"
+                android:name="com.dominate.thirtySecondsChallenge.ui.gamelobbyinterface.fragment.StartGameLobbyFragment"
+                android:label="StartGameLobbyFragment"
+                tools:layout="@layout/fragment_start_game_lobby">
+                <action
+                    android:id="@+id/action_startGameLobbyFragment_to_fragmentSettingDialog"
+                    app:destination="@id/fragmentSettingDialog" />
+                <action
+                    android:id="@+id/action_startGameLobbyFragment_to_gameControllerFragment"
+                    app:destination="@id/gameControllerFragment"
+                    app:popUpTo="@id/homeFragment"
+                    app:popUpToInclusive="false" />
+            </fragment>
+
+            <dialog
+                android:id="@+id/fragmentSettingDialog"
+                android:name="com.dominate.thirtySecondsChallenge.ui.setting.FragmentSettingDialog"
+                android:label="FragmentSettingDialog"
+                tools:layout="@layout/fragment_setting_dialog" />
+
+            <fragment
+                android:id="@+id/gameControllerFragment"
+                android:name="com.dominate.thirtySecondsChallenge.ui.game.GameControllerFragment"
+                android:label="GameControllerFragment"
+                tools:layout="@layout/fragment_game_controller">
+                <action
+                    android:id="@+id/action_gameControllerFragment_to_fragmentSettingDialog"
+                    app:destination="@id/fragmentSettingDialog" />
+            </fragment>
+            <action
+                android:id="@+id/action_global_endGameFragment"
+                app:destination="@id/endGameFragment" />
+
+        </navigation>
+        <action
+            android:id="@+id/action_global_gameLobbyFragment"
+            app:destination="@id/gameLobbyFragment" />
+        <action
+            android:id="@+id/action_global_shoppingCartFragment"
+            app:destination="@id/shoppingCartFragment" />
+        <action
+            android:id="@+id/action_global_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_global_selectFriendsListFragment"
+            app:destination="@id/selectFriendsListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </navigation>
+    <action
+        android:id="@+id/action_global_mainOperationFragment"
+        app:destination="@id/mainOperationFragment" />
+
+    <navigation
+        android:id="@+id/mainProfileFragment"
+        android:label="MainProfileFragment"
+        app:startDestination="@id/profileFragment">
+
+        <fragment
+            android:id="@+id/profileFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.profile.ProfileFragment"
+            android:label="ProfileFragment"
+            tools:layout="@layout/fragment_profile">
+
+            <action
+                android:id="@+id/action_profileFragment_to_editProfileFragment"
+                app:destination="@id/editProfileFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+
+        </fragment>
+
+        <fragment
+            android:id="@+id/editProfileFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.profile.fragment.EditProfileFragment"
+            android:label="EditProfileFragment"
+            tools:layout="@layout/fragment_edit_profile" />
+
+        <action
+            android:id="@+id/action_global_onBoardingStepThreeFragment"
+            app:destination="@id/onBoardingStepThreeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <dialog
+            android:id="@+id/settingProfileFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.profile.dialog.SettingProfileFragment"
+            android:label="SettingProfileFragment"
+            tools:layout="@layout/fragment_setting_profile">
+            <action
+                android:id="@+id/action_settingProfileFragment_to_supportFragment"
+                app:destination="@id/supportFragment" />
+        </dialog>
+
+        <fragment
+            android:id="@+id/privacyPolicyFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.privacy.PrivacyPolicyFragment"
+            android:label="PrivacyPolicyFragment"
+            tools:layout="@layout/fragment_privacy_policy" />
+
+        <dialog
+            android:id="@+id/deleteAccountFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.profile.dialog.DeleteAccountFragment"
+            android:label="DeleteAccountFragment"
+            tools:layout="@layout/fragment_delete_account">
+
+        </dialog>
+
+        <fragment
+            android:id="@+id/supportFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.profile.fragment.SupportFragment"
+            android:label="SupportFragment"
+            tools:layout="@layout/fragment_support" />
+
+        <dialog
+            android:id="@+id/editBackgroundProfileFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.profile.dialog.EditBackgroundProfileFragment"
+            android:label="EditBackgroundProfileFragment"
+            tools:layout="@layout/fragment_edit_background_profile" />
+
+        <dialog
+            android:id="@+id/editAccountProfileFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.profile.dialog.EditAccountProfileFragment"
+            android:label="EditAccountProfileFragment"
+            tools:layout="@layout/fragment_edit_account_profile" />
+        <action
+            android:id="@+id/action_global_privacyPolicyFragment"
+            app:destination="@id/privacyPolicyFragment" />
+
+    </navigation>
+
+    <action
+        android:id="@+id/action_global_mainProfileFragment"
+        app:destination="@id/mainProfileFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <navigation
+        android:id="@+id/mainPlayerProfileFragment"
+        android:label="MainPlayerProfileFragment"
+        app:startDestination="@id/playerProfileFragment">
+
+        <dialog
+            android:id="@+id/playerProfileFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.player.PlayerProfileFragment"
+            android:label="PlayerProfileFragment"
+            tools:layout="@layout/fragment_player_profile">
+
+            <action
+                android:id="@+id/action_playerProfileFragment_to_morePlayerFragment"
+                app:destination="@id/morePlayerFragment" />
+
+        </dialog>
+
+        <dialog
+            android:id="@+id/morePlayerFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.player.sheet.MorePlayerFragment"
+            android:label="MorePlayerFragment"
+            tools:layout="@layout/more_player_sheet">
+
+            <action
+                android:id="@+id/action_morePlayerFragment_to_removeFriendsFragment"
+                app:destination="@id/removeFriendsFragment" />
+
+            <action
+                android:id="@+id/action_morePlayerFragment_to_reportPlayerFragment"
+                app:destination="@id/reportPlayerFragment" />
+
+        </dialog>
+
+        <dialog
+            android:id="@+id/removeFriendsFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.player.dialog.RemoveFriendsFragment"
+            android:label="RemoveFriendsFragment"
+            tools:layout="@layout/fragment_remove_friends" />
+
+        <fragment
+            android:id="@+id/giftFriendsFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.player.dialog.GiftFriendsFragment"
+            android:label="GiftFriendsFragment"
+            tools:layout="@layout/fragment_gift_friends" />
+
+        <dialog
+            android:id="@+id/reportPlayerFragment"
+            android:name="com.dominate.thirtySecondsChallenge.ui.player.sheet.ReportPlayerFragment"
+            android:label="ReportPlayerFragment"
+            tools:layout="@layout/fragment_report_player" />
+
+    </navigation>
+    <action
+        android:id="@+id/action_global_mainPlayerProfileFragment"
+        app:destination="@id/mainPlayerProfileFragment" />
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.dominate.thirtySecondsChallenge.ui.webview.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view">
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+
+        <argument
+            android:name="url"
+            app:argType="string" />
+
+    </fragment>
+    <action
+        android:id="@+id/action_global_webViewFragment"
+        app:destination="@id/webViewFragment" />
+
+    <include app:graph="@navigation/game_nav_graph" />
+
+    <action
+        android:id="@+id/action_from_included_graph"
+        app:destination="@id/game_nav_garph" />
+
+</navigation>
